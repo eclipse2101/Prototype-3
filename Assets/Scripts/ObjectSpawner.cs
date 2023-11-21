@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ObjectSpawner : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
     float SpawnRangeX = 39;
@@ -27,7 +27,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     {
         
-        Vector3 spawnPos = new Vector3(SpawnRangeX, 0, 0); 
+        Vector3 spawnPos = new Vector3(SpawnRangeX, 0.4f, 0); 
             
             int objectIndex = Random.Range(0, objectPrefabs.Length); 
             

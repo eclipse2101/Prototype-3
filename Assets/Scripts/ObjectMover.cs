@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner : MonoBehaviour
+public class ObjectMover : MonoBehaviour
 {
     private float speed = 30;
     
