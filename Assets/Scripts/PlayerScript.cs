@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
  public float gravityScaler;
  public float jumpPower;
  public bool isGrounded = true;
+ public bool gameOver = false; 
 
 
     void Start()
@@ -31,6 +32,14 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        isGrounded = true;
+       if (collision.gameObject.CompareTag("Ground"))
+        {
+             isGrounded = true;
+        }
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            gameOver = true;
+            Debug.Log("Game Over! You Suck!");
+        }
     }
 }
