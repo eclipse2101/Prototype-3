@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8830492083883865383}
   - component: {fileID: 8830492083884802391}
   - component: {fileID: 327831750356001008}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: oil
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

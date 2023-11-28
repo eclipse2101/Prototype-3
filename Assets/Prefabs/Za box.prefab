@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4876674734555248007}
   - component: {fileID: 4876674734556291781}
   - component: {fileID: 7248477754942756262}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Za box
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

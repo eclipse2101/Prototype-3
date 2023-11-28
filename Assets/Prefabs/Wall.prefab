@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6111160726471035396}
   - component: {fileID: 815606242012920937}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 8879387925270338038}
   - component: {fileID: 8881215824774373734}
   - component: {fileID: 8891095332347808378}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Prop_StoneWall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

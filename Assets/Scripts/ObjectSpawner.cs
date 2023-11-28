@@ -9,12 +9,14 @@ public class ObjectSpawner : MonoBehaviour
     
     public float startingSpawn = 5; 
     public float spawnTiming = 1.5f;
+    private PlayerScript PC; 
     
     
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnRandomObstacles", startingSpawn, spawnTiming);
+        PC = GameObject.Find("Player").GetComponent<PlayerScript>(); 
     }
 
     // Update is called once per frame
@@ -26,12 +28,15 @@ public class ObjectSpawner : MonoBehaviour
     void SpawnRandomObstacles()
 
     {
-        
-        Vector3 spawnPos = new Vector3(SpawnRangeX, 0.4f, 0); 
+            Vector3 spawnPos = new Vector3(SpawnRangeX, 0.4f, 0); 
             
             int objectIndex = Random.Range(0, objectPrefabs.Length); 
-            
-            Instantiate(objectPrefabs[objectIndex], spawnPos, objectPrefabs[objectIndex].transform.rotation);
-
+       
+          Instantiate(objectPrefabs[objectIndex], spawnPos, objectPrefabs[objectIndex].transform.rotation);
+       
+       if (PC.gameOver == false)
+       {
+          
+       } 
     }
 }
