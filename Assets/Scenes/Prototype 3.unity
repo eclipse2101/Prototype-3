@@ -593,7 +593,7 @@ PrefabInstance:
     - target: {fileID: 1537588123905170965, guid: 88c1654b5995d4284920a98036abc9b4,
         type: 3}
       propertyPath: m_Name
-      value: SimpleFarmer_Woman_02_Black
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1537588123905393269, guid: 88c1654b5995d4284920a98036abc9b4,
         type: 3}
@@ -648,6 +648,11 @@ PrefabInstance:
     - target: {fileID: 1537588123905393269, guid: 88c1654b5995d4284920a98036abc9b4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537588125605757892, guid: 88c1654b5995d4284920a98036abc9b4,
+        type: 3}
+      propertyPath: gameOver
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

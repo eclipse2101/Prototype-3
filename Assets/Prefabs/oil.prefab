@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8830492083883865383}
   - component: {fileID: 8830492083884802391}
   - component: {fileID: 327831750356001008}
+  - component: {fileID: 1726196536724368942}
+  - component: {fileID: -6156870445816783240}
   m_Layer: 0
   m_Name: oil
   m_TagString: Obstacle
@@ -94,3 +96,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3951a1f2bb74400be7445c4bfdbca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1726196536724368942
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830492083886985609}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.94652724, y: 1.3434768, z: 0.94652736}
+  m_Center: {x: -0.000000044703484, y: 0.6717384, z: 0}
+--- !u!54 &-6156870445816783240
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830492083886985609}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

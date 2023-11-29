@@ -19,12 +19,6 @@ public class ObjectSpawner : MonoBehaviour
         PC = GameObject.Find("Player").GetComponent<PlayerScript>(); 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void SpawnRandomObstacles()
 
     {
@@ -32,11 +26,11 @@ public class ObjectSpawner : MonoBehaviour
             
             int objectIndex = Random.Range(0, objectPrefabs.Length); 
        
-          Instantiate(objectPrefabs[objectIndex], spawnPos, objectPrefabs[objectIndex].transform.rotation);
+        
        
        if (PC.gameOver == false)
        {
-          
+            Instantiate(objectPrefabs[objectIndex], spawnPos, objectPrefabs[objectIndex].transform.rotation);
        } 
     }
 }
