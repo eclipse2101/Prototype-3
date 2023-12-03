@@ -11,6 +11,11 @@ public class PlayerScript : MonoBehaviour
  public bool isGrounded = true;
  public bool gameOver = false; 
  private Animator playeranim;
+ public ParticleSystem BoomBoomParticle; 
+ public ParticleSystem DirtTrail;
+ private AudioSource playerAudio;
+ public AudioClip jumpSound; 
+ public AudioClip crashSound;  
 
 
     void Start()
@@ -18,6 +23,7 @@ public class PlayerScript : MonoBehaviour
         player = GetComponent<Rigidbody>();
         Physics.gravity *= gravityScaler;
         playeranim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +34,8 @@ public class PlayerScript : MonoBehaviour
         player.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         isGrounded = false; 
         playeranim.SetTrigger("Jump_trig");
+        DirtTrail.Stop();
+        playerAudio.PlayOneShot(jumpSound, 1.0f);
        }
         
     }
@@ -37,6 +45,7 @@ public class PlayerScript : MonoBehaviour
        if (collision.gameObject.CompareTag("Ground"))
         {
              isGrounded = true;
+             DirtTrail.Play();
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
@@ -44,6 +53,9 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Game Over! You Suck!");
             playeranim.SetBool("Death_b", true); 
             playeranim.SetInteger("DeathType_int", 1);
+            BoomBoomParticle.Play();
+            DirtTrail.Stop();
+            playerAudio.PlayOneShot(crashSound, 1.0f); 
         }
     }
 }
