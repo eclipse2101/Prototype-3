@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour
  Rigidbody player; 
  public float gravityScaler;
  public float jumpPower;
+ public float doubleJumpPower;
  public bool isGrounded = true;
  public bool gameOver = false; 
  private Animator playeranim;
@@ -15,7 +16,8 @@ public class PlayerScript : MonoBehaviour
  public ParticleSystem DirtTrail;
  private AudioSource playerAudio;
  public AudioClip jumpSound; 
- public AudioClip crashSound;  
+ public AudioClip crashSound;
+ public int jumps = 2;   
 
 
     void Start()
@@ -29,6 +31,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+       ////////////////// JUMPING///////////////////
        if(Input.GetKeyDown(KeyCode.Space) && isGrounded && !gameOver)
        {
         player.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
@@ -37,7 +41,23 @@ public class PlayerScript : MonoBehaviour
         DirtTrail.Stop();
         playerAudio.PlayOneShot(jumpSound, 1.0f);
        }
-        
+
+       else if (Input.GetKeyDown(KeyCode.Space) && !isGrounded && !gameOver)
+       {
+         if(jumps != 0)
+         {
+          player.AddForce(Vector3.up * doubleJumpPower, ForceMode.Impulse);
+          playeranim.SetTrigger("Jump_trig");
+          DirtTrail.Stop();
+          playerAudio.PlayOneShot(jumpSound, 1.0f);
+          jumps = jumps - 1;
+         }
+       } 
+       /////////////////RUNNING/////////////
+       if(Input.GetKeyDown(KeyCode.LeftShift))
+       {
+         Debug.Log("the player is running");
+       }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -46,6 +66,7 @@ public class PlayerScript : MonoBehaviour
         {
              isGrounded = true;
              DirtTrail.Play();
+             jumps = 2;
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
