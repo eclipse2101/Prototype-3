@@ -1020,6 +1020,11 @@ PrefabInstance:
       objectReference: {fileID: 1753544626}
     - target: {fileID: 1537588125605757892, guid: 88c1654b5995d4284920a98036abc9b4,
         type: 3}
+      propertyPath: jumpPower
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537588125605757892, guid: 88c1654b5995d4284920a98036abc9b4,
+        type: 3}
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
@@ -1028,6 +1033,11 @@ PrefabInstance:
       propertyPath: crashSound
       value: 
       objectReference: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
+    - target: {fileID: 1537588125605757892, guid: 88c1654b5995d4284920a98036abc9b4,
+        type: 3}
+      propertyPath: doubleJumpPower
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1537588125605757892, guid: 88c1654b5995d4284920a98036abc9b4,
         type: 3}
       propertyPath: BoomBoomParticle
