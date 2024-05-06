@@ -17,7 +17,9 @@ public class PlayerScript : MonoBehaviour
  private AudioSource playerAudio;
  public AudioClip jumpSound; 
  public AudioClip crashSound;
- public int jumps = 2;   
+ public int jumps = 2;
+ public bool isRunning;  
+ public float animationspeed = 60;  
 
 
     void Start()
@@ -56,8 +58,18 @@ public class PlayerScript : MonoBehaviour
        /////////////////RUNNING/////////////
        if(Input.GetKeyDown(KeyCode.LeftShift))
        {
+         isRunning = true;
+         playeranim.speed = animationspeed;
          Debug.Log("the player is running");
        }
+      
+      if(Input.GetKeyUp(KeyCode.LeftShift)) 
+       {
+        isRunning = false;
+        playeranim.speed = 1;
+        Debug.Log("the player is not running");
+       }
+
     }
 
     private void OnCollisionEnter(Collision collision)

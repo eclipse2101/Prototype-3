@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectMover : MonoBehaviour
 {
     private float speed = 30;
+    public float maxSpeed = 60;
     float leftBound = -15;
     private PlayerScript PC; 
     
@@ -20,6 +21,12 @@ public class ObjectMover : MonoBehaviour
         if(PC.gameOver == false)
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed);
+
+            if(PC.isRunning == true && gameObject.CompareTag("Background"))
+            {
+              transform.Translate(Vector3.left * Time.deltaTime * maxSpeed);  
+            }
+            
         }
         
         if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
