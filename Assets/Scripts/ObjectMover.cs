@@ -22,7 +22,7 @@ public class ObjectMover : MonoBehaviour
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed);
 
-            if(PC.isRunning == true && gameObject.CompareTag("Background"))
+            if(PC.isRunning == true)
             {
               transform.Translate(Vector3.left * Time.deltaTime * maxSpeed);  
             }

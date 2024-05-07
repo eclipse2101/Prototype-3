@@ -20,6 +20,7 @@ public class PlayerScript : MonoBehaviour
  public int jumps = 2;
  public bool isRunning;  
  public float animationspeed = 60;  
+ 
 
 
     void Start()
